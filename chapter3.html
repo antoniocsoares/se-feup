@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WebQuest: Process</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">WebQuest: Make your own web page</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+                
+               
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="teacher"><i class="fa fa-user fa-fw"></i> Help Teacher</a>
+                        </li>
+                        <li><a href="student"><i class="fa fa-users fa-fw"></i> Help Student</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="references.html"><i class="fa fa-book fa-fw"></i> References</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        
+                        <li>
+                            <a href="index.html"><i class="fa fa-road fa-fw"></i> Introduction</a>
+                        </li>
+                        <li>
+                            <a href="tasks.html"><i class="fa fa-tasks fa-fw"></i> Tasks</a>
+                        </li>
+                        <li>
+                            <a href="process.html"><i class="fa fa-sort-numeric-asc fa-fw"></i> Process</a>
+                        </li>
+                        <li>
+                            <a href="resources.html"><i class="fa fa-puzzle-piece fa-fw"></i> Resources</a>
+                        </li> 
+                        <li>
+                            <a href="evaluation.html"><i class="fa fa-check-square-o fa-fw"></i> Evaluation</a>
+                        </li>
+                        <li>
+                            <a href="conclusion.html"><i class="fa fa-trophy fa-fw"></i> Conclusion</a>
+                        </li>
+                       
+                        
+                       
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-9">
+                    <h1 class="page-header">Chapter 3: The use of css</h1>
+                    <p><em>If you want your text with style this chapter will help you do it!</em></p>
+					<p>So this task objective is to help your lean how use CSS to style the page your builded last chapter.</p>
+                    <div class="panel panel-default">
+						<div class="panel-heading">
+						   Lets style your code!
+						</div>
+						<!-- .panel-heading -->
+						<div class="panel-body">
+							
+						    <div class="panel-group" id="accordion">
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Learning what is CSS</a>
+						                </h4>
+						            </div>
+						            <div id="collapseOne" class="panel-collapse collapse in">
+						                <div class="panel-body">
+												<p>CSS stands for Cascading Style Sheets</p>
+												<p>CSS describes how HTML elements are to be displayed on screen, paper, or in other media. Basically apply style to your text. </p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Applying CSS</a>
+						                </h4>
+						            </div>
+						            <div id="collapseTwo" class="panel-collapse collapse">
+						                <div class="panel-body">
+											<p>There are three ways to apply CSS to HTML: In-line, internal, and external.</p>
+											<h4>In-line</h4>
+											<p>In-line styles are plonked straight into the HTML tags using the style attribute.</p>
+											<p>They look something like this:</p>
+											<pre>&lt;p style="color: red"&gt;text&lt;/p&gt;</pre>
+											<p class="bg-info">This will make that specific paragraph red.</p>
+											<p>But, if you remember, the best-practice approach is that the HTML should be a stand-alone, presentation free document, and so in-line styles should be avoided wherever possible.</p>
+											<h4>Internal</h4>
+											<p>Embedded, or internal, styles are used for the whole page. Inside the head element, the style tags surround all of the styles for the page.</p>
+											<pre>
+&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+		&lt;head&gt;
+			&lt;title&gt;CSS Example&lt;title&gt;
+			&lt;style&gt;
+				h1 {
+				    color: orange;
+				    text-align: center;
+				}
+				p {
+				    font-family: "Times New Roman";
+				    font-size: 20px;
+				}
+			&lt;style&gt;
+			…
+											</pre>
+											<p class="bg-info">This will make all of the paragraphs in the paragraphs have the font Times New Roman and font size equal to 20 px. All the headers level 1 will have the text orange and they will be align to center of the page. </p>
+											<p>Although preferable to soiling our HTML with inline presentation, it is similarly usually preferable to keep the HTML and the CSS files separate, and so we are left with our savior…</p>
+											<h4>External</h4>
+											<p>External styles are used for the whole, multiple-page website. There is a separate CSS file, which will simply look something like:</p>
+											<pre>
+h1 {
+    color: orange;
+    text-align: center;
+}
+p {
+    font-family: "Times New Roman";
+    font-size: 20px;
+}
+											</pre>
+											<p>If this file is saved as “style.css” in the same directory as your HTML page then it can be linked to in the HTML like this:</p>
+											<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS Example&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    ...
+											</pre>
+											<p>If you save the HTML file. This now links to the CSS file, with the style you choose to write.
+You can check more styles <a href="http://www.w3schools.com/cssref/" role="button">here</a></p>
+											<p class="bg-info">To see changes in the CSS file and see the results you can simply refresh the browser window that has the HTML file in it.
+											</p>
+											<p>Apply what you learned using the same webpage you produced last chapter and pick one way to apply this styles.
+											</p>
+						        		</div>
+						        	</div>
+						        </div>
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Selectors, Properties, and Values</a>
+						                </h4>
+						            </div>
+						            <div id="collapseThree" class="panel-collapse collapse">
+						                <div class="panel-body">
+											 <p>Whereas HTML has tags, CSS has selectors. Selectors are the names given to styles in internal and external style sheets. In this CSS Beginner Tutorial we will be concentrating on HTML selectors, which are simply the names of HTML tags and are used to change the style of a specific type of element.</p>
+											 <p>For each selector there are “properties” inside curly brackets, which simply take the form of words such as color, font-weight or background-color.</p>
+											 <p>A value is given to the property following a colon (NOT an “equals” sign) and semi-colons separate the properties.</p>
+											 <pre>
+body {
+    font-size: 14px;
+    color: navy;
+}
+											 </pre>
+											 <p class="bg-info">This will apply the given values to the font-size and color properties to the body selector.</p>
+											 <p>So basically, when this is applied to an HTML document, text between the body tags (which is the content of the whole window) will be 14 pixels in size and navy in color.</p>
+						            </div>
+						        </div>
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Lengths and Percentages</a>
+						                </h4>
+						            </div>
+						            <div id="collapseFour" class="panel-collapse collapse">
+						                <div class="panel-body">
+							                <div class="panel-body">
+											<p>There are many property-specific units for values used in CSS, but there are some general units that are used by a number of properties and it is worth familiarizing yourself with these before continuing.</p>
+											 <dl class="dl-horizontal">
+											 	<dt>px</dt>
+											 	<dd>(such as font-size: 12px) is the unit for pixels.</dd>
+											 	<dt>em </dt>
+											 	<dd>(such as font-size: 2em) is the unit for the calculated size of a font. So “2em”, for example, is two times the current font size.</dd>
+											 	<dt>pt</dt>
+											 	<dd>(such as font-size: 12pt) is the unit for points, for measurements typically in printed media.</dd>
+											 	<dt>%</dt>
+											 	<dd>(such as width: 80%) is the unit for… wait for it… percentages.</dd>
+											 </dl>
+											 <p class="bg-info">
+											 Other units include pc (picas), cm (centimeters), mm (millimeters) and in (inches).
+											</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Colors</a>
+						                </h4>
+						            </div>
+						            <div id="collapseFive" class="panel-collapse collapse">
+						            	<h4>How colors in css works</h4>
+						            	<p>CSS brings 16,777,216 colors to your disposal. They can take the form of a name, an RGB (red/green/blue) value or a hex code.</p>
+						            	<p>The following values, to specify full-on as red-as-red-can-be, all produce the same result:</p>
+						            	<ul>
+						            		<li>Red</li>
+						            		<li>rgb(255,0,0)</li>
+						            		<li>rgb(100%,0%,0%)</li>
+						            		<li>#ff0000</li>
+						            		<li>#f00</li>
+						            	</ul>
+						            	<p>Predefined color names include aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow. transparent is also a valid value.</p>
+						            	<p>The three values in the RGB value are from 0 to 255, 0 being the lowest level (no red, for example), 255 being the highest level (full red, for example). These values can also be a percentage.
+						            	</p>
+						            	<p>Hexadecimal (previously and more accurately known as “sexadecimal”) is a base-16 number system. We are generally used to the decimal number system (base-10, from 0 to 9), but hexadecimal has 16 digits, from 0 to f.</p>
+						            	<p>The hex number is prefixed with a hash character (#) and can be three or six digits in length. Basically, the three-digit version is a compressed version of the six-digit (#ff0000 becomes #f00, #cc9966 becomes #c96, etc.). The three-digit version is easier to decipher (the first digit, like the first value in RGB, is red, the second green and the third blue) but the six-digit version gives you more control over the exact color.</p>
+						            	<h4>Applying color and background-color</h4>
+						            	<p>Colors can be applied by using color and background-color (note that this must be the American English “color” and not “colour”).</p>
+						            	<p>A blue background and yellow text could look like this:</p>
+						            	<pre>
+h1 {
+    color: yellow;
+    background-color: blue;
+}
+										</pre>
+										<p>These colors might be a little too harsh, so you could change the code of your CSS file for slightly different shades:</p>
+										<pre>
+body {
+    font-size: 14px;
+    color: navy;
+}
+
+h1 {
+    color: #ffc;
+    background-color: #009;
+}
+
+						            	</pre>
+						            	<p>Now try to apply what you learned. Change, save the CSS file and refresh your browser. If you used the example code you will see the colors of the first heading (the h1 element) have changed to yellow and blue.</p>
+						            	<p>You can also apply the color and background-color properties to most HTML elements, including body, which will change the colors of the page and everything in it.</p>
+						            </div>
+						        </div>
+						         <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Font</a>
+						                </h4>
+						            </div>
+						            <div id="collapseSix" class="panel-collapse collapse">
+						                <div class="panel-body">
+						                <p>A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats. Although the term font first referred to a set of metal type sorts in one style and size, since the 1990s it is generally used to refer to a scalable set of digital shapes that may be printed at many different sizes.</p>
+						                <dl class="dl-horizontal">
+						                	<dt>Font-family</dt>
+						                	<dd>This is the font itself, such as Times New Roman, Arial, or Verdana. The user’s browser has to be able to find the font you specify, which, in most cases, means it needs to be on their computer so there is little point in using obscure fonts that are only sitting on your computer. There are a select few “safe” fonts (the most commonly used are Arial, Verdana and Times New Roman), but you can specify more than one font, separated by commas. The purpose of this is that if the user does not have the first font you specify, the browser will go through the list until it finds one it does have. This is useful because different computers sometimes have different fonts installed. So font-family: arial, helvetica, serif, will look for the Arial font first and, if the browser can’t find it, it will search for Helvetica, and then a common serif font.
+						                	</dd>
+						                	<dt>Font-size</dt>
+						                	<dd>Font-size sets the size of the font. Be careful with this — text such as headings should not just be an HTML paragraph (p) in a large font - you should still use headings (h1, h2 etc.) even though, in practice, you could make the font-size of a paragraph larger than that of a heading (not recommended for sensible people).
+						                	</dd>
+						                	<dt>Font-weight</dt>
+						                	<dd>Font-weight states whether the text is bold or not. Most commonly this is used as font-weight: bold or font-weight: normal but other values are bolder, lighter, 100, 200, 300, 400 (same as normal), 500, 600, 700 (same as bold), 800 or 900.
+						                	</dd>
+						                	<dt>Font-style</dt>
+						                	<dd>Font-style states whether the text is italic or not. It can be font-style: italic or font-style: normal.
+						                	</dd>
+						                </dl>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Text-decoration</a>
+						                </h4>
+						            </div>
+						            <div id="collapseSeven" class="panel-collapse collapse">
+						                <div class="panel-body">
+							                <p>Text-decoration states whether the text has got a line running under, over, or through it.</p>
+							                <dl class="dl-horizontal">
+							                 	<dt>underline</dt>
+							                 	<dd>underline, does what you would expect.</dd>
+							                 	<dt>underline</dt>
+							                 	<dd>overline places a line above the text.</dd>
+							                 	<dt>line-through</dt>
+							                 	<dd>line-through puts a line through the text (“strike-through”).</dd>
+							                 	<dt>none</dt>
+							                 	<dd>This property is usually used to decorate links and you can specify no underline with.</dd>
+							                 </dl>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Text-transform</a>
+						                </h4>
+						            </div>
+						            <div id="collapseEight" class="panel-collapse collapse">
+						                <div class="panel-body">
+						                <p>You can apply different form of text transformations.</p>
+							                 <dl class="dl-horizontal">
+							                 	<dt>capitalize</dt>
+							                 	<dd>capitalize turns the first letter of every word into uppercase.</dd>
+							                 	<dt>uppercase</dt>
+							                 	<dd>uppercase turns everything into uppercase.</dd>
+							                 	<dt>lowercase</dt>
+							                 	<dd>lowercase turns everything into lowercase.</dd>
+							                 	<dt>none</dt>
+							                 	<dd>no transformation.</dd>
+							                 </dl>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="panel panel-default">
+						            <div class="panel-heading">
+						                <h4 class="panel-title">
+						                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Summing up</a>
+						                </h4>
+						            </div>
+						            <div id="collapseNine" class="panel-collapse collapse">
+						                <div class="panel-body">
+							                <p>So, a few of these things used together might look like this:</p>
+							                <pre>
+
+
+body {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+strong {
+    font-style: italic;
+    text-transform: uppercase;
+}
+											</pre>
+											<p>Again play with your page text and do something fancy.</p>
+
+											<p>There are way more things you can learn like animations or more complex style that we will not address here  but we encourage you to find and try.</p>
+
+											<h4>More Resources</h4>
+											<ul>
+											<li><a href="http://www.w3schools.com/css/css_list.asp">Style Lists</a></li>
+											<li><a href="http://www.w3schools.com/css/css_table.asp">Style Tables</a></li>
+											<li><a href="http://www.w3schools.com/css/css3_images.asp">Style images</a></li>
+											<li><a href="http://www.w3schools.com/css/css3_animations.asp">Produce animation</a></li>
+											</ul>
+						                </div>
+						           		<div class="alert alert-success" role="alert">Well done, you finish this task, now move to the next one!
+						           		</div>
+						            </div>
+						        </div>
+						    </div>
+						</div>
+						<!-- .panel-body -->
+					</div>
+						<a type="button" class="btn btn-outline btn-default" href="chapter2.html">Chapter 2: Your first HTML page</a>
+						<a type="button" class="btn btn-outline btn-primary" href="chapter4.html">Chapter 4: Make it interactive! Introduction to Javascript</a>
+                   </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
