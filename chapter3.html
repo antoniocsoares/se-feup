@@ -143,7 +143,7 @@
 											<p>In-line styles are plonked straight into the HTML tags using the style attribute.</p>
 											<p>They look something like this:</p>
 											<pre>&lt;p style="color: red"&gt;text&lt;/p&gt;</pre>
-											<p class="bg-info">This will make that specific paragraph red.</p>
+											<p class="text-primary">This will make that specific paragraph red.</p>
 											<p>But, if you remember, the best-practice approach is that the HTML should be a stand-alone, presentation free document, and so in-line styles should be avoided
 												whenever possible since it would lead to very cluttered HTML pages as your webpage grows in size.</p>
 											<h4>Internal</h4>
@@ -165,7 +165,7 @@
 			&lt;style&gt;
 			…
 											</pre>
-											<p class="bg-info">This will make all of the paragraphs (marked by the paragraph tag) in the webpage have the font Times New Roman and font size equal to 20 px. All the headers level 1 will have the text orange and they will be align to center of the page. </p>
+											<p class="text-primary">This will make all of the paragraphs (marked by the paragraph tag) in the webpage have the font Times New Roman and font size equal to 20 px. All the headers level 1 will have the text orange and they will be align to center of the page. </p>
 											<p>Although preferable to using Inline, it is still better to keep the HTML and the CSS files separate, and so we are left with our last option…</p>
 											<h4>External</h4>
 											<p>External styles are used for the whole, multiple-page website. There is a separate CSS file, which will simply look something like:</p>
@@ -190,7 +190,7 @@ p {
 											</pre>
 											<p>If you save the HTML file. This now links to the CSS file, with the style you choose to write.
 You can check more styles <a href="http://www.w3schools.com/cssref/" role="button">here</a></p>
-											<p class="bg-info">To see changes in the CSS file and see the results you can simply refresh the browser window that has the HTML file in it.
+											<p class="text-primary">To see changes in the CSS file and see the results you can simply refresh the browser window that has the HTML file in it.
 											</p>
 											<p>Apply what you learned using the same webpage you produced last chapter and pick one way to apply this styles.
 											</p>
@@ -212,11 +212,11 @@ You can check more styles <a href="http://www.w3schools.com/cssref/" role="butto
 body {
     font-size: 14px;
     color: navy;
-}
-											 </pre>
-											 <p class="bg-info">This will apply the given values to the font-size and color properties to the body selector.</p>
+}											 </pre>
+											 <p class="text-primary">This will apply the given values to the font-size and color properties to the body selector.</p>
 											 <p>So basically, when this is applied to an HTML document, text between the body tags (which is the content of the whole window) will be 14 pixels in size and navy in color.</p>
 						            </div>
+						        </div>
 						        </div>
 						        <div class="panel panel-default">
 						            <div class="panel-heading">
@@ -225,8 +225,8 @@ body {
 						                </h4>
 						            </div>
 						            <div id="collapseFour" class="panel-collapse collapse">
+						               
 						                <div class="panel-body">
-							                <div class="panel-body">
 											<p>There are many property-specific units for values used in CSS, but there are some general units that are used by a number of properties and it is worth familiarizing yourself with these before continuing.</p>
 											 <dl class="dl-horizontal">
 											 	<dt>px</dt>
@@ -238,11 +238,11 @@ body {
 											 	<dt>%</dt>
 											 	<dd>(such as width: 80%) is the unit for… wait for it… percentages.</dd>
 											 </dl>
-											 <p class="bg-info">
+											 <p class="text-primary">
 											 Other units include pc (picas), cm (centimeters), mm (millimeters) and in (inches).
 											</p>
 						                </div>
-						            </div>
+						           </div>
 						        </div>
 						        <div class="panel panel-default">
 						            <div class="panel-heading">
@@ -251,6 +251,8 @@ body {
 						                </h4>
 						            </div>
 						            <div id="collapseFive" class="panel-collapse collapse">
+						            						                <div class="panel-body">
+						            
 						            	<h4>How colors in css works</h4>
 						            	<p>CSS brings 16,777,216 colors to your disposal. They can take the form of a name, an RGB (red/green/blue) value or a hex code.</p>
 						            	<p>The following values, to specify full-on as red-as-red-can-be, all produce the same result:</p>
@@ -291,7 +293,9 @@ h1 {
 						            	<p>Now try to apply what you learned. Change, save the CSS file and refresh your browser. If you used the example code you will see the colors of the first heading (the h1 element) have changed to yellow and blue.</p>
 						            	<p>You can also apply the color and background-color properties to most HTML elements, including body, which will change the colors of the page and everything in it.</p>
 						            </div>
+						            </div>
 						        </div>
+						        
 						         <div class="panel panel-default">
 						            <div class="panel-heading">
 						                <h4 class="panel-title">
@@ -407,9 +411,8 @@ strong {
 											<li><a href="http://www.w3schools.com/css/css3_images.asp">Style images</a></li>
 											<li><a href="http://www.w3schools.com/css/css3_animations.asp">Produce animation</a></li>
 											</ul>
+						           		<p class="alert alert-success" role="alert">Well done, you finished this task, now move on to the next one!</p>
 						                </div>
-						           		<div class="alert alert-success" role="alert">Well done, you finished this task, now move on to the next one!
-						           		</div>
 						            </div>
 						        </div>
 						    </div>
