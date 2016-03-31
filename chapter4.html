@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WebQuest: Process</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="stylesheets/myCss.css" rel="stylesheet" type="text/css">
+    <script>
+        /* When the user clicks on the button,
+         toggle between hiding and showing the dropdown content */
+        function myFunction(objButton) {
+            if(objButton.textContent ==="Click me!" || objButton.textContent === "Turned OFF!")
+            {
+                objButton.textContent = "Turned ON!";
+                objButton.className = "dropbtnON";
+            }
+
+            else
+            {
+                objButton.textContent = "Turned OFF!";
+                objButton.className = "dropbtnOFF";
+            }
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">WebQuest: Make your own web page</a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <ul class="nav navbar-top-links navbar-right">
+
+
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="teacher"><i class="fa fa-user fa-fw"></i> Help Teacher</a>
+                    </li>
+                    <li><a href="student"><i class="fa fa-users fa-fw"></i> Help Student</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="references.html"><i class="fa fa-book fa-fw"></i> References</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+        <!-- /.navbar-top-links -->
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+
+                    <li>
+                        <a href="index.html"><i class="fa fa-road fa-fw"></i> Introduction</a>
+                    </li>
+                    <li>
+                        <a href="tasks.html"><i class="fa fa-tasks fa-fw"></i> Tasks</a>
+                    </li>
+                    <li>
+                        <a href="process.html"><i class="fa fa-sort-numeric-asc fa-fw"></i> Process</a>
+                    </li>
+                    <li>
+                        <a href="resources.html"><i class="fa fa-puzzle-piece fa-fw"></i> Resources</a>
+                    </li>
+                    <li>
+                        <a href="evaluation.html"><i class="fa fa-check-square-o fa-fw"></i> Evaluation</a>
+                    </li>
+                    <li>
+                        <a href="conclusion.html"><i class="fa fa-trophy fa-fw"></i> Conclusion</a>
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-9">
+                    <h1 class="page-header">Chapter 4: Make it interactive! Introduction to Javascript</h1>
+                    <p>So as you've learned so far, HTML and CSS display content of a webpage in a pretty, yet static way.</p>
+                    <p>"Static? What are you even talking about?" What if you want your website to respond to user events
+                    such as a mouse click, or the typing of a key? That's where Javascript comes in to make your page <em>interactive!</em></p>
+                    <p>Here's what a simple HTML page looks like.</p>
+                    <div class="bootstrap-demo">
+                        <pre><p>
+&lt;!doctype html&gt;
+    &lt;head&gt;
+        &lt;link href="style.css" rel="stylesheet"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        ...
+        &lt;script src="app.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                        </p></pre>
+                    </div>
+                    <p>To include CSS files in HTML we used the <strong>link</strong> element tag as we've learned before.</p>
+                    <p>Similarly, to include JavaScript files in HTML, we use the <strong>script</strong> element tag.</p>
+                    <p>The <strong>&lt;script&gt;</strong> element tells the browser where to find a JavaScript file. It has an attribute inside the
+                        opening <strong>&lt;script&gt;</strong> tag named <em>src</em>, which has the address of the JavaScript file.</p>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Let's see a few examples
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Buttons and clicking actions</a>
+                                        </h4>
+                                    </div>
+
+
+
+                                    <div id="collapseTwo" class="panel-collapse collapse">
+
+
+                                    <button onclick="myFunction(this)" class="dropbtn">Click Me!</button>
+
+                                        <div class="panel-body">
+                                            <p>Pretty neat huh? This is what we call interactive webpages, where they respond
+                                            to user events such as clicking with a mouse.</p>
+                                            <p>To create a button such as this we first need to add some HTML code to actually generate the button.</p>
+                                            <p>As you may have guessed it there's a HTML tag to create buttons! The <strong>&lt;button&gt;</strong> tag.</p>
+                                            <div class="bootstrap-demo">
+                                                <pre><p>&lt;button&gt;Click Me!&lt;/button&gt;</p></pre>
+                                            </div>
+                                            <p>Go ahead and try adding a button tag to your HTML page and try to see it on the browser.</p>
+                                            <p>Oh? What happened? The button itself is created but it's ugly and it doesn't respond to the user interaction,
+                                            such as a mouse click. Well this is to be expected because as you've learned before to make it prettier, or
+                                            at least as pretty as the one you saw above you need CSS, in this case we'll just add a class to our button.</p>
+                                            <div class="bootstrap-demo">
+                                                <pre><p>&lt;button class="dropbtn"&gt;Click Me!&lt;/button&gt;</p></pre>
+                                            </div>
+                                            <p>After that we need to write some CSS code to work with that class we just defined for our button to make it style.
+                                            Go ahead and write some CSS of your own to make the button pretty or if you want it to look like the one above simply use
+                                            this code.</p>
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top:10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtnON {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top:10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtnOFF {
+    background-color: #ff1000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top:10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+                                                </p></pre>
+                                            </div>
+                                            <p>Okay our button is coming along nicely, it's pretty and styled but it still doesn't respond to
+                                            mouse clicks. To make it respond to mouse clicks you must first understand what events are.</p>
+                                            <p>HTML events are "things" that happen to HTML elements.
+                                                When JavaScript is used in HTML pages, JavaScript can "react" on these events.</p>
+                                            <p>An HTML event can be something the browser does, or something a user does.
+
+                                                Here are some examples of HTML events:
+                                            </p>
+                                            <ul class="list-group">
+                                                <li class="list-group-item">An HTML web page has finished loading</li>
+                                                <li class="list-group-item">An HTML input field was changed (eg: a user wrote something in a text field)</li>
+                                                <li class="list-group-item">An HTML button was clicked</li>
+                                            </ul>
+                                            <p>Often, when events happen, you may want to do something.
+
+                                                JavaScript lets you execute code when events are detected.</p>
+                                            <p>HTML allows event handler attributes, <strong>with JavaScript code</strong>, to be added to HTML elements.</p>
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>&lt;button some-event="some JavaScript code here"&gt;</p></pre>
+                                            </div>
+
+                                            <p>HTML allows event handler attributes, <strong>with JavaScript code</strong>, to be added to HTML elements.</p>
+
+                                            <p>In the following example, an onclick (user clicks on the HTML element) attribute (with code), is added to a button element:</p>
+
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>&lt;button onclick='this.textContent=Date()'&gt;The time is?&lt;/button&gt;</p></pre>
+                                            </div>
+
+                                            <p>What we did there is add some Javascript code to the button, so that it "reacts" when it's clicked upon,
+                                            and calls a function called <strong>Date</strong> which is already defined by Javascript and all it does is give you
+                                            the value of the current time and date when it was called, and sets the button content to that date.</p>
+
+
+                                            <div class="alert alert-info">
+                                                <i class="fa fa-question-circle"></i> <i>JavaScript code is often several lines long. It is more common to see event attributes
+                                                calling functions that are defined in separate Javascript files or <strong>&lt;script&gt;</strong> tags:</i>
+                                            </div>
+
+                                            <p>In the following example, we already defined the function <em>displayDate</em> in a <strong>&lt;script&gt;</strong> tag above like this:</p>
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;script&gt;
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+&lt;/script&gt;
+                                                </p></pre>
+                                            </div>
+
+                                            <p>So now we create a button and set its onclick event to the function <em>displayDate</em> so our HTML page looks like this:</p>
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;body&gt;
+
+        &lt;script&gt;
+            function displayDate() {
+                document.getElementById("demo").innerHTML = Date();
+            }
+        &lt;/script&gt;
+
+        &lt;p&gt;Click the button to display the date.&lt;/p&gt;
+
+        &lt;button onclick="displayDate()"&gt;The time is?&lt;/button&gt;
+
+        &lt;p id="demo"&gt;&lt;/p&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+
+                                                </p></pre>
+                                            </div>
+
+                                            <p>So what we're actually doing here is creating a button that when you click on it, it reacts by
+                                            calling the Javascript method <em>Date</em> and putting the current date that's returned in the paragraph
+                                            that has the attribute <em>id</em>. Go ahead and try it yourself! Copy the HTML above or come up with your
+                                            own idea of how to make a onclick interaction of a button!</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Playing around with videos</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>Okay now that we've learned how to make our page react to a click event, let's try something more fun. How about playing/pausing a video?
+                                            Maybe make it bigger or smaller? Does that sound cool to you? It sure is! Let's see how we can go about it.</p>
+
+                                            <div style="text-align:center">
+                                                <button onclick="playPause()">Play/Pause</button>
+                                                <button onclick="makeBig()">Big</button>
+                                                <button onclick="makeSmall()">Small</button>
+                                                <button onclick="makeNormal()">Normal</button>
+                                                <br><br>
+                                                <video id="myVideo" width="420">
+                                                    <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+
+                                            <script>
+                                                var myVideo = document.getElementById("myVideo");
+
+                                                function playPause() {
+                                                    if (myVideo.paused)
+                                                        myVideo.play();
+                                                    else
+                                                        myVideo.pause();
+                                                }
+
+                                                function makeBig() {
+                                                    myVideo.width = 560;
+                                                }
+
+                                                function makeSmall() {
+                                                    myVideo.width = 320;
+                                                }
+
+                                                function makeNormal() {
+                                                    myVideo.width = 420;
+                                                }
+                                            </script>
+
+                                            <br><br>
+                                            <p>So in HTML we have a <strong>&lt;video&gt;</strong> tag that allows us to display video in our webpages, pretty cool huh? Let's go ahead and add
+                                            one to our page.</p>
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;video id="myVideo" width="420"&gt;
+    &lt;source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+                                                </p></pre>
+                                            </div>
+
+                                            <p>If you add the code above to your HTML page you'll see that a video now appears in your
+                                            webpage, although it really looks like a still image because you there are no easy ways to play and pause the video! Let's add some
+                                            with the knowledge we just got about buttons and on click events!</p>
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;button onclick="playPause()"&gt;Play/Pause&lt;/button&gt;
+&lt;button onclick="makeBig()"&gt;Big&lt;/button&gt;
+&lt;button onclick="makeSmall()"&gt;Small&lt;/button&gt;
+&lt;button onclick="makeNormal()"&gt;Normal&lt;/button&gt;
+
+&lt;script&gt;
+    var myVideo = document.getElementById("video1");
+
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function makeBig() {
+        myVideo.width = 560;
+    }
+
+    function makeSmall() {
+        myVideo.width = 320;
+    }
+
+    function makeNormal() {
+        myVideo.width = 420;
+    }
+&lt;/script&gt;
+                                                </p></pre>
+                                            </div>
+
+                                            <p>Okay that was a lot take in, so let's break it down so you can better understand
+                                            what we did there!</p>
+
+                                            <p>First we added 4 buttons and to each button we assigned a function to its onclick event,
+                                            then below we added a <strong>&lt;script&gt;</strong> tag and inside it we defined a variable
+                                            that points to our video defined in the HTML by its <em>id</em> attribute and then each of
+                                            our javascript functions that we assigned to the buttons! Their names are self-explanatory
+                                            but basically the function <em>playPause()</em> makes the video play and pause depending on its
+                                            current state and the functions <em>makeBig</em>,<em>makeSmall</em> and <em>makeNormal</em> resize
+                                            the video to a big, small and normal size respectively.</p>
+
+                                            <p>Ok so far so good! Our HTML now should look similar to this:</p>
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+    &lt;div style="text-align:center"&gt;
+      &lt;button onclick="playPause()"&gt;Play/Pause&lt;/button&gt;
+      &lt;button onclick="makeBig()"&gt;Big&lt;/button&gt;
+      &lt;button onclick="makeSmall()"&gt;Small&lt;/button&gt;
+      &lt;button onclick="makeNormal()"&gt;Normal&lt;/button&gt;
+      &lt;br&gt;&lt;br&gt;
+      &lt;video id="myVideo" width="420"&gt;
+        &lt;source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4"&gt;
+      &lt;/video&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+    var myVideo = document.getElementById("video1");
+
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function makeBig() {
+        myVideo.width = 560;
+    }
+
+    function makeSmall() {
+        myVideo.width = 320;
+    }
+
+    function makeNormal() {
+        myVideo.width = 420;
+    }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                                                </p></pre>
+                                            </div>
+
+                                            <p>Pretty cool stuff huh? Now you've learned how to add multimedia content to your webpage and actually control it with user interactions!
+                                            If you'd like to know more about multimedia in HTML check the resources below!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Lists: Adding and Removing</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>We learned how to interact with our webpage and even how to add multimedia content to it!
+                                            Now let's learn one last cool trick.</p>
+                                            <p>One other cool HTML element is the list, and there are some pretty neat things we can do with lists! Let's see an example:</p>
+
+                                            <form>
+                                                <select id="mySelect" size="10">
+                                                    <option>Apples</option>
+                                                    <option>Pears</option>
+                                                    <option>Bananas</option>
+                                                    <option>Oranges</option>
+                                                </select>
+                                            </form>
+
+                                            Choose a name: <input id="inputField" type="text" name="inputName"><br>
+
+                                            <p>Input something on the text field above and then click on the button
+                                                to add the name you input at the end of the list.</p>
+
+                                            <button onclick="addElement()">Insert</button>
+                                            <button onclick="removeElement()">Remove selected item</button>
+
+                                            <script>
+                                                function addElement() {
+                                                    var x = document.getElementById("mySelect");
+                                                    var y = document.getElementById("inputField");
+                                                    if(y.value !== "")
+                                                    {
+                                                        var option = document.createElement("option");
+                                                        option.text = y.value;
+                                                        x.add(option);
+                                                        y.value = "";
+                                                    }
+                                                }
+
+                                                function removeElement(){
+                                                    var x = document.getElementById("mySelect");
+                                                    if(x.selectedIndex >= 0)
+                                                    {
+                                                        x.remove(x.selectedIndex);
+                                                    }
+                                                }
+                                            </script>
+                                            <br><br>
+                                            <p>Whoa! That was cool! But how exactly can you make your webpage do something like that?</p>
+                                            <p>Okay so there's actually quite a few steps to make it work like above so let's break it down.</p>
+                                            <p>First we need to actually create some sort of list-like element that will hold our items, and populate
+                                            it with something so that it doesn't look all empty.</p>
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;form&gt;
+    &lt;select id="mySelect" size="10"&gt;
+        &lt;option&gt;Apples&lt;/option&gt;
+        &lt;option&gt;Pears&lt;/option&gt;
+        &lt;option&gt;Bananas&lt;/option&gt;
+        &lt;option&gt;Oranges&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/form&gt;
+                                                </p></pre>
+                                            </div>
+                                            <p>This creates a list-like element and populates it with some pre-defined elements. Next we need some sort
+                                            of input field so that the user can input data to create a new item for the list.</p>
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+Choose a name: &lt;input id="inputField" type="text" name="inputName"&gt;&lt;br&gt;
+                                                </p></pre>
+                                            </div>
+                                            <p>This creates an input field for text where the user can type any name to add to list.</p>
+                                            <p>After this we need to create the buttons that will work all the magic and pick up the information the user inputs.</p>
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;button onclick="addElement()"&gt;Insert&lt;/button&gt;
+&lt;button onclick="removeElement()"&gt;Remove selected item&lt;/button&gt;
+                                                </p></pre>
+                                            </div>
+                                            <p>Note that we defined the onclick events for the buttons and pointed them to functions, but yet we didnt define those functions
+                                            on our page, would you be able to do it on your own? You have to use a... you guessed it, a <strong>&lt;script&gt;</strong> tag.</p>
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;script&gt;
+    function addElement() {
+        var x = document.getElementById("mySelect");
+        var y = document.getElementById("inputField");
+        if(y.value !== "")
+        {
+            var option = document.createElement("option");
+            option.text = y.value;
+            x.add(option);
+            y.value = "";
+        }
+    }
+    
+    function removeElement(){
+        var x = document.getElementById("mySelect");
+        if(x.selectedIndex &gt;= 0)
+        {
+            x.remove(x.selectedIndex);
+        }
+    }
+&lt;/script&gt;
+                                                </p></pre>
+                                            </div>
+
+                                            <p>Again that was quite a lot, so let's try to understand it bit by bit. First we define a function
+                                            <em>addElement()</em> that will retrieve the value of the input field and if it's not empty it will
+                                            then create a new option for the list with the name that was input.</p>
+                                            <p>After that we define the function that removes the selected item from the list <em>removeElement()</em>
+                                                that will check to see if there's actually a selected item on the list and if there is then
+                                                it removes it from it.</p>
+                                            <p>Okay that was a lot to take in right? But if you stuck it out until now your HTML should look similar to this:</p>
+
+                                            <div class="bootstrap-demo">
+                                                <pre><p>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+    
+        &lt;form&gt;
+            &lt;select id="mySelect" size="10"&gt;
+                &lt;option&gt;Apples&lt;/option&gt;
+                &lt;option&gt;Pears&lt;/option&gt;
+                &lt;option&gt;Bananas&lt;/option&gt;
+                &lt;option&gt;Oranges&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/form&gt;
+        &lt;br&gt;
+        
+        Choose a name: &lt;input id="inputField" type="text" name="inputName"&gt;&lt;br&gt;
+        
+        &lt;p&gt;Input something on the text field above and then click on the button
+            to add the name you input at the end of the list.&lt;/p&gt;
+        
+        &lt;button onclick="addElement()"&gt;Insert&lt;/button&gt;
+        &lt;button onclick="removeElement()"&gt;Remove selected item&lt;/button&gt;
+        
+        &lt;script&gt;
+            function addElement() {
+                var x = document.getElementById("mySelect");
+                var y = document.getElementById("inputField");
+                if(y.value !== "")
+                {
+                    var option = document.createElement("option");
+                    option.text = y.value;
+                    x.add(option);
+                    y.value = "";
+                }
+            }
+        
+            function removeElement(){
+                var x = document.getElementById("mySelect");
+                if(x.selectedIndex &gt;= 0)
+                {
+                    x.remove(x.selectedIndex);
+                }
+            }
+        &lt;/script&gt;
+    
+    &lt;/body&gt;
+&lt;/html&gt;
+                                                </p></pre>
+                                            </div>
+
+                                            <p>Okay! Now you've learned a few tricks to make your webpage more interactive and dynamic.</p>
+                                            <p>There's a lot more to making a webpage dynamic and interactive and so much more you can learn! If you
+                                            wish to learn more check out the resources below.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <h4>More Resources</h4>
+                    <ul>
+                        <li><a href="http://www.w3schools.com/js/js_events.asp">Javascript Events</a></li>
+                        <li><a href="http://www.w3schools.com/howto/howto_js_dropdown.asp">Create Interactive Buttons</a></li>
+                        <li><a href="http://www.w3schools.com/html/html_media.asp">HTML Multimedia</a></li>
+                        <li><a href="http://www.w3schools.com/html/html5_video.asp">Playing Videos in HTML</a></li>
+                        <li><a href="http://www.w3schools.com/jsref/met_select_add.asp">Adding elements to lists</a></li>
+                        <li><a href="http://www.w3schools.com/jsref/met_select_remove.asp">Removing elements from lists</a></li>
+                        <li><a href="https://www.codecademy.com/skills/make-an-interactive-website">Build an interactive website</a></li>
+                    </ul>
+                        <!-- .panel-body -->
+                    </div>
+                    <a type="button" class="btn btn-outline btn-primary" href="chapter4.html">Chapter 3: The use of CSS</a>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
